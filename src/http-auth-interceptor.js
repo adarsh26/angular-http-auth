@@ -58,7 +58,7 @@
               case 401:
                 var deferred = $q.defer();
                 var bufferLength = httpBuffer.append(config, deferred);
-                if (bufferLength === 1)
+                if (bufferLength > 1)
                   $rootScope.$broadcast('event:auth-loginRequired', rejection);
                 return deferred.promise;
               case 403:
